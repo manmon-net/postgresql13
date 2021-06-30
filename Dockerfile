@@ -8,6 +8,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt focal-pgdg main" > /etc/ap
   DEBIAN_FRONTEND=noninteractive apt-get clean
   
 COPY docker-entrypoint.sh /usr/local/bin/
+USER postgres
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 5432
