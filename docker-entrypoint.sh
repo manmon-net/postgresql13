@@ -2,7 +2,7 @@
 if [ ! -d /var/lib/postgresql/data ]
 then
   /usr/lib/postgresql/13/bin/initdb -D /var/lib/postgresql/data --pwfile=<(echo "$POSTGRES_PASSWORD")
-  echo "host   all             all                                     md5" >> /var/lib/postgresql/data/pg_hba.conf
+  echo "host   all             all              0.0.0.0/0                       md5" >> /var/lib/postgresql/data/pg_hba.conf
   echo "listen_addresses = '*'" >> /var/lib/postgresql/data/postgresql.conf
 fi
 
