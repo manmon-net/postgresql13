@@ -11,4 +11,4 @@ COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 5432
-CMD ["postgres","-D","/var/lib/postgresql/data"]
+CMD ["/usr/lib/postgresql/13/bin/postgres","-D","/var/lib/postgresql/data"]
